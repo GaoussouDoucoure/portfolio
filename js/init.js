@@ -162,6 +162,26 @@ function gaoussou_tm_trigger_menu(){
 	});
 }
 
+// Mobile menu tap flash effect
+document.addEventListener("DOMContentLoaded", function () {
+	const mobileLinks = document.querySelectorAll(
+		".gaoussou_tm_mobile_menu .dropdown_inner a"
+	);
+
+	mobileLinks.forEach(link => {
+		link.addEventListener("click", function () {
+			// Add glow class
+			this.classList.add("tapped");
+
+			// Remove after short delay
+			setTimeout(() => {
+				this.classList.remove("tapped");
+			}, 150); // 150ms = perfect flash timing
+		});
+	});
+});
+
+
 // -----------------------------------------------------
 // --------------   TOPBAR BACKGROUND    ---------------
 // -----------------------------------------------------

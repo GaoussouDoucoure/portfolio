@@ -514,10 +514,18 @@ body.dark .loader_line:after{
 	font-weight: 500;
 	border-radius: 6px;
 	transition:
-		background 0.25s ease,
-		transform 0.25s ease,
-		box-shadow 0.25s ease,
-		color 0.25s ease;
+		background 0.15s ease,
+		transform 0.15s ease,
+		box-shadow 0.15s ease,
+		color 0.15s ease;
+}
+
+/* Tap Flash Glow (same as skill-card hover) */
+.tapped {
+	background: #020617 !important;
+	transform: translateY(-2px) !important;
+	box-shadow: 0 0 12px rgba(255, 0, 0, 0.6) !important;
+	color: #ffffff !important;
 }
 
 /* 🔥 MOBILE TAP FEEDBACK — EXACT SAME EFFECT AS SKILL CARD */
