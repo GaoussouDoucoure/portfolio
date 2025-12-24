@@ -431,7 +431,7 @@ body.dark .loader_line:after{
 /*	03) GAOUSSOU MOBILE MENU
 /*---------------------------------------------------*/
 
-.gaoussou_tm_mobile_menu{
+.gaoussou_tm_mobile_menu {
 	width: 100%;
 	height: auto;
 	position: fixed;
@@ -440,21 +440,21 @@ body.dark .loader_line:after{
 	display: none;
 	z-index: 10;
 }
-.gaoussou_tm_mobile_menu .my_trigger{
+.gaoussou_tm_mobile_menu .my_trigger {
 	line-height: 1;
 	position: relative;
-	right: -10px; 
+	right: -10px;
 }
-.gaoussou_tm_mobile_menu .mobile_menu_inner{
+.gaoussou_tm_mobile_menu .mobile_menu_inner {
 	width: 100%;
 	height: auto;
 	float: left;
 	clear: both;
 	background-color: #fff;
 	padding: 15px 0px;
-	box-shadow: 0px 0px 10px rgba(0,0,0,.08);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, .08);
 }
-.gaoussou_tm_mobile_menu .mobile_in{
+.gaoussou_tm_mobile_menu .mobile_in {
 	width: 100%;
 	height: auto;
 	clear: both;
@@ -463,54 +463,69 @@ body.dark .loader_line:after{
 	align-items: center;
 	justify-content: space-between;
 }
-.gaoussou_tm_mobile_menu .mobile_in .logo img{max-width: 70px;}
-.my_trigger .hamburger-box{display: block;}
-.my_trigger .hamburger{padding: 0px;}
+.gaoussou_tm_mobile_menu .mobile_in .logo img {
+	max-width: 70px;
+}
+.my_trigger .hamburger-box {
+	display: block;
+}
+.my_trigger .hamburger {
+	padding: 0px;
+}
 .my_trigger .hamburger .hamburger-inner::before,
 .my_trigger .hamburger .hamburger-inner::after,
-.my_trigger .hamburger .hamburger-inner{
+.my_trigger .hamburger .hamburger-inner {
 	background-color: #000;
 	width: 30px;
 	height: 2px;
-	
-	-webkit-transition: all .3s ease;
-	   -moz-transition: all .3s ease;
-	    -ms-transition: all .3s ease;
-	     -o-transition: all .3s ease;
-	        transition: all .3s ease;
+	transition: all .3s ease;
 }
-.gaoussou_tm_mobile_menu .dropdown{
+.gaoussou_tm_mobile_menu .dropdown {
 	width: 100%;
 	height: auto;
 	clear: both;
 	float: left;
 	background-color: #fff;
-	box-shadow: 0px 0px 10px rgba(0,0,0,.08);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, .08);
 	display: none;
 }
-.gaoussou_tm_mobile_menu .dropdown .dropdown_inner{
+.gaoussou_tm_mobile_menu .dropdown .dropdown_inner {
 	width: 100%;
 	height: auto;
 	clear: both;
 	float: left;
 	padding: 25px 0px;
 }
-.gaoussou_tm_mobile_menu .dropdown .dropdown_inner ul{
+.gaoussou_tm_mobile_menu .dropdown .dropdown_inner ul {
 	margin: 0px;
 	list-style-type: none;
 }
-.gaoussou_tm_mobile_menu .dropdown .dropdown_inner ul li{
+.gaoussou_tm_mobile_menu .dropdown .dropdown_inner ul li {
 	margin: 0px;
 	float: left;
 	width: 100%;
 }
-.gaoussou_tm_mobile_menu .dropdown .dropdown_inner ul li a{
+.gaoussou_tm_mobile_menu .dropdown .dropdown_inner ul li a {
 	text-decoration: none;
 	color: #000;
 	display: inline-block;
 	padding: 4px 0px;
 	font-family: "Poppins";
 	font-weight: 500;
+	border-radius: 6px;
+	transition:
+		background 0.25s ease,
+		transform 0.25s ease,
+		box-shadow 0.25s ease,
+		color 0.25s ease;
+}
+
+/* 🔥 MOBILE TAP FEEDBACK — EXACT SAME EFFECT AS SKILL CARD */
+.gaoussou_tm_mobile_menu .dropdown .dropdown_inner ul li a:active {
+	background: #020617;
+	transform: translateY(-2px);
+	box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+	color: #ffffff !important;
 }
 
 /*---------------------------------------------------*/
@@ -932,40 +947,118 @@ body.dark .loader_line:after{
 /*	06) GAOUSSOU RESUME
 /*---------------------------------------------------*/
 
-.gaoussou_tm_resume{
+/* ================================
+   RESUME LAYOUT
+   ================================ */
+
+.gaoussou_tm_resume {
 	width: 100%;
 	height: auto;
 	clear: both;
 	float: left;
 }
-.gaoussou_tm_resume .main_title{
+
+.gaoussou_tm_resume .main_title {
 	width: 100%;
 	float: left;
 	margin-bottom: 75px;
 }
-.gaoussou_tm_resume .main_title h3{
+
+.gaoussou_tm_resume .main_title h3 {
 	font-size: 40px;
 	font-weight: 700;
 	color: #0F172A;
 	text-align: center;
 }
-.gaoussou_tm_resume .resume_inner{
+
+.gaoussou_tm_resume .resume_inner {
 	width: 100%;
 	height: auto;
 	clear: both;
 	display: flex;
 }
-.gaoussou_tm_resume .resume_inner .skills{
+
+/* ================================
+   SKILLS
+   ================================ */
+
+.gaoussou_tm_resume .resume_inner .skills {
 	width: 50%;
 	padding-right: 125px;
+	box-sizing: border-box;
 }
-.gaoussou_tm_resume .resume_title{
+
+/* Skills Grid */
+.skills-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 14px;
+	margin-top: 50px;
+	width: 100%;
+}
+
+/* Skill Card */
+.skill-card {
+	background: #0F172A;
+	border: 1px solid #1E293B;
+	border-radius: 10px;
+	padding: 12px 14px;
+
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-card:hover {
+	background: #020617;
+	transform: translateY(-2px);
+	box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+	/* Red Glow on Hover */
+}
+
+/* Skill Icon */
+.skill-card img {
+	width: 22px;
+	height: 22px;
+	filter: brightness(0) invert(1);
+	flex-shrink: 0;
+}
+
+/* Skill Text */
+.skill-card span {
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 500;
+	white-space: nowrap;
+}
+
+/* Responsive Skills */
+@media (max-width: 1023px) {
+	.skills-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 480px) {
+	.skills-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ================================
+   RESUME TITLE
+   ================================ */
+
+.gaoussou_tm_resume .resume_title {
 	width: 100%;
 	float: left;
 	position: relative;
 	overflow: hidden;
 }
-.gaoussou_tm_resume .resume_title .svg{
+
+.gaoussou_tm_resume .resume_title .svg {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
@@ -975,7 +1068,8 @@ body.dark .loader_line:after{
 	fill: none;
 	margin-top: -2px;
 }
-.gaoussou_tm_resume .resume_title span{
+
+.gaoussou_tm_resume .resume_title span {
 	display: inline-block;
 	position: relative;
 	text-transform: uppercase;
@@ -984,7 +1078,8 @@ body.dark .loader_line:after{
 	font-weight: 600;
 	padding-left: 60px;
 }
-.gaoussou_tm_resume .resume_title span:before{
+
+.gaoussou_tm_resume .resume_title span:before {
 	position: absolute;
 	content: "";
 	width: 1000px;
@@ -995,111 +1090,41 @@ body.dark .loader_line:after{
 	left: 100%;
 	margin-left: 20px;
 }
-.tokyo_progress{
-	width: 100%;
-	height: auto;
-	clear: both;
-	float: left;
-	padding-top: 50px;
-}
-.progress_inner{
-	width:100%;
-	margin-bottom:26px;
-}
-.progress_inner:last-child{
-	margin-bottom: 0px;
-}
-.progress_inner > span{
-	margin:0px 0px 4px 0px;
-	display:block;
-	text-align:left;
-	position: relative;
-}
-.progress_inner span.label{
-	opacity: 0;
-	transform: translateY(10px);
-	display: block;
-	color: #0F172A;
-	font-family: "Poppins";
-	font-size: 16px;
-	font-weight: 400;
-	
-	-webkit-transition: all .5s ease;
-	   -moz-transition: all .5s ease;
-	    -ms-transition: all .5s ease;
-	     -o-transition: all .5s ease;
-	        transition: all .5s ease;
-}
-.progress_inner span.label.opened{
-	opacity: 1;
-	transform: translateY(0px);
-}
-.progress_inner span.number{
-	float: right;
-	position: absolute;
-	right: 100%;
-	top: 50%;
-	transform: translateY(-50%);
-	transition: all 2s cubic-bezier(0.165, 0.840, 0.440, 1.000);  /* IE 10+ */
-	color: #7E7E7E;
-	font-family: "Poppins";
-	font-size: 16px;
-}
-.progress_inner .background{
-	background:#E2E2E2;
-	width:100%;
-	min-width:100%;
-	position:relative;
-	height:6px;
-	border-radius: 18px;
-}
-.progress_inner .background .bar_in{
-	height:100%;
-	background:#D6002F;
-	width:0px;
-	overflow:hidden;
-	border-radius: 18px;
-}
-.progress_inner .background .bar{
-	width:0px;
-	height:100%;
-}
-.progress_inner .background .bar.open{
-	-webkit-animation: wow 2s cubic-bezier(0.165, 0.840, 0.440, 1.000);  /* Safari 4+ */
-	-moz-animation:    wow 2s cubic-bezier(0.165, 0.840, 0.440, 1.000);  /* Fx 5+ */
-	animation:         wow 2s cubic-bezier(0.165, 0.840, 0.440, 1.000);  /* IE 10+ */
-	width:100%;	
-}
 
-@-webkit-keyframes wow {0%{ width:0%; } 100%{ width:100%; }}
-@-moz-keyframes wow {0%{ width:0%; } 100%{ width:100%; }}
-@keyframes wow {0%{ width:0%; } 100%{ width:100%; }}
+/* ================================
+   EDUCATION
+   ================================ */
 
-.gaoussou_tm_resume .education{
+.gaoussou_tm_resume .education {
 	width: 50%;
 	padding-left: 125px;
 }
-.gaoussou_tm_resume .edu_list{
+
+.gaoussou_tm_resume .edu_list {
 	width: 100%;
 	height: auto;
 	clear: both;
 	float: left;
 	padding-top: 50px;
 }
-.gaoussou_tm_resume .edu_list ul{
+
+.gaoussou_tm_resume .edu_list ul {
 	margin: 0px;
 	list-style-type: none;
 }
-.gaoussou_tm_resume .edu_list ul li{
+
+.gaoussou_tm_resume .edu_list ul li {
 	margin: 0px 0px 25px 0px;
 	width: 100%;
 	float: left;
 }
-.gaoussou_tm_resume .edu_list ul li p{
+
+.gaoussou_tm_resume .edu_list ul li p {
 	font-size: 16px;
 	color: #7E7E7E;
 }
-.gaoussou_tm_resume .edu_list ul li p span{
+
+.gaoussou_tm_resume .edu_list ul li p span {
 	font-size: 18px;
 	color: #0F172A;
 }
@@ -2347,7 +2372,7 @@ body.modal{
 }
 
 .footer-social a:hover {
-    color: #0A66C2;
+    color: #D6002F;
     transform: scale(1.15);
 }
 
@@ -2519,17 +2544,26 @@ body.modal{
 }
 
 .plain-link {
-  color: inherit;
-  text-decoration: none;
-  font-weight: inherit;
-  transition: text-shadow 0.3s ease;
+	color: inherit;
+	text-decoration: none;
+	font-weight: inherit;
+	padding: 4px 6px;
+	border-radius: 6px;
+	transition:
+		background 0.25s ease,
+		transform 0.25s ease,
+		box-shadow 0.25s ease,
+		color 0.25s ease;
 }
 
 .plain-link:hover {
-  text-decoration: none;
-  color: inherit;
-  text-shadow:
-    0 0 6px rgba(255, 255, 255, 0.9),   /* bright white core */
-    0 0 12px rgba(255, 0, 0, 0.7),      /* red mid glow */
-    0 0 20px rgba(255, 0, 0, 0.5);      /* red outer glow */
+	text-decoration: none;
+
+	/* FORCE text to become white instead of red */
+	color: #ffffff !important;
+
+	/* red glow effect */
+	background: #020617;
+	transform: translateY(-2px);
+	box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
 }
