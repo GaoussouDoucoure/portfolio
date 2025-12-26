@@ -1050,6 +1050,11 @@ body.dark .loader_line:after{
 	}
 }
 
+@media (max-width: 480px) {
+	.skills-grid {
+		grid-template-columns: 1fr;
+	}
+}
 
 /* ================================
    RESUME TITLE
