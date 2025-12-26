@@ -1050,7 +1050,8 @@ body.dark .loader_line:after{
 	}
 }
 
-@media (max-width: 480px) {
+/* 1-skill per line on smaller screens */
+@media (max-width: 200px) {
 	.skills-grid {
 		grid-template-columns: 1fr;
 	}
