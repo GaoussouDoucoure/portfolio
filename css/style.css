@@ -1043,13 +1043,15 @@ body.dark .loader_line:after{
 }
 
 /* Responsive Skills */
+/* 2-skills per line on small screens like iphone basics */
 @media (max-width: 1023px) {
 	.skills-grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
-@media (max-width: 480px) {
+/* 1-skill per line on smaller screen than iphone basics */
+@media (max-width: 344px) {
 	.skills-grid {
 		grid-template-columns: 1fr;
 	}
