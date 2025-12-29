@@ -1436,6 +1436,19 @@ body.dark .loader_line:after{
 	margin-bottom: 0px;
 }
 
+.location_date {
+	margin-top: -25px;
+	font-style: italic;
+}
+
+.exp_quotebox p {
+	font-size: 20px;
+	margin-bottom: 23px;
+	border-left: 2px solid #D6002F;
+	padding-left: 30px;
+	color: #CDCDCD;
+}
+
 /*---------------------------------------------------*/
 /*	08) GAOUSSOU PORTFOLIO
 /*---------------------------------------------------*/
