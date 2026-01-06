@@ -639,6 +639,7 @@ body.dark .loader_line:after{
 	top: 30px;
 	opacity: 0;
 	visibility: hidden;
+	color: #fff;
 	
 	-webkit-transition: all .8s ease;
 	   -moz-transition: all .8s ease;
