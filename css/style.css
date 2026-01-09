@@ -2140,6 +2140,14 @@ body.modal{
 	height: 15px;
 }
 
+/* Truncate long Certification Title */
+.gaoussou_tm_certifications ul li .details .title a {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
+}
+
 /*---------------------------------------------------*/
 /*	11) GAOUSSOU CONTACT
 /*---------------------------------------------------*/
